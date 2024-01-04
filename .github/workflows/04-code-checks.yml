@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
   pull_request:
     branches: [main]
-
+env:
+  workspace-name: EspaceworkMLOps # name of the Azure Machine Learning workspace
+  resource-group: GressourceMLops # name of the Azure resource group
+  
 jobs:
   linting:
     name: linting
