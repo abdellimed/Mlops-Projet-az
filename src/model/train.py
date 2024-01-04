@@ -14,14 +14,10 @@ from sklearn.model_selection import train_test_split
 def main(args):
     # TO DO: enable autologging
     mlflow.autolog()
-
-
     # read data
     df = get_csvs_df(args.training_data)
-
     # split data
     X_train, X_test, y_train, y_test = split_data(df)
-
     # train model
     train_model(args.reg_rate, X_train, X_test, y_train, y_test)
 
@@ -43,7 +39,6 @@ def split_data(df, test_size=0.2):
     X = df.drop("Diabetic", axis=1)
     y = df["Diabetic"]
     X_train, X_test, y_train, y_test = train_test_split(
-        #new line
         X, y, test_size=test_size)
     return X_train, X_test, y_train, y_test
 
