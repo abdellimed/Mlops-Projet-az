@@ -38,8 +38,7 @@ def split_data(df, test_size=0.2):
     # split data into train and test sets
     X = df.drop("Diabetic", axis=1)
     y = df["Diabetic"]
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=test_size)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
     return X_train, X_test, y_train, y_test
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
@@ -50,31 +49,24 @@ def train_model(reg_rate, X_train, X_test, y_train, y_test):
 def parse_args():
     # setup arg parser
     parser = argparse.ArgumentParser()
-
     # add arguments
     parser.add_argument("--training_data", dest='training_data',
                         type=str)
     parser.add_argument("--reg_rate", dest='reg_rate',
                         type=float, default=0.01)
-
     # parse args
     args = parser.parse_args()
-
     # return args
     return args
-
 # run script
 if __name__ == "__main__":
     # add space in logs
     print("\n\n")
     print("*" * 60)
-
     # parse args
     args = parse_args()
-
     # run main function
     main(args)
-
     # add space in logs
     print("*" * 60)
     print("\n\n")
