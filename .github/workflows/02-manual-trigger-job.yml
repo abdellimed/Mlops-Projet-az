@@ -2,8 +2,7 @@ name: Manually trigger an Azure Machine Learning job
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [main]
+  
 
 env:
   workspace-name: EspaceworkMLOps # name of the Azure Machine Learning workspace
